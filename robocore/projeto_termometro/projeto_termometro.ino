@@ -25,37 +25,42 @@ void loop(){
   Serial.print("Valor do sensor = ");
   Serial.println(valorSensor);
   
-  if(valorSensor > 450){
+  if(valorSensor > 500){
     digitalWrite(led1, HIGH); 
   } else {
    digitalWrite(led1, LOW); 
   }
   
-  if(valorSensor > 550){
+  if(valorSensor > 535){
     digitalWrite(led2, HIGH); 
   } else {
    digitalWrite(led2, LOW); 
   }
   
-  if(valorSensor > 650){
+  if(valorSensor > 580){
     digitalWrite(led3, HIGH); 
   } else {
    digitalWrite(led3, LOW); 
   }
   
-  if(valorSensor > 750){
+  if(valorSensor > 680){
     digitalWrite(led4, HIGH); 
   } else {
    digitalWrite(led4, LOW); 
   }
   
-  if(valorSensor > 850){
-    digitalWrite(led5, HIGH); 
+  if(valorSensor > 750){
+    digitalWrite(led5, HIGH);
+    
+    digitalWrite(buzz, HIGH);
+    delay(500);
+    digitalWrite(buzz, LOW);
+    
   } else {
    digitalWrite(led5, LOW); 
   }
   
-  if(valorSensor > 950){
+  if(valorSensor > 870){
     digitalWrite(led6, HIGH); 
     digitalWrite(buzz, HIGH);
   } else {
