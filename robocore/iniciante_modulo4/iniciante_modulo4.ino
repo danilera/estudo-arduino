@@ -12,23 +12,14 @@ void setup(){
 
 void loop(){
   int potenciaAtual = analogRead(aPot);
-  int time = calculateTime(potenciaAtual);
 
   Serial.print("Potencia: ");
-  Serial.print(potenciaAtual);
-  Serial.print(", Time: ");
-  Serial.println(time);
+  Serial.println(potenciaAtual);
   
   
   digitalWrite(dLed, LOW);
-  delay(time);
+  delay(potenciaAtual);
   digitalWrite(dLed, HIGH);
-    delay(time);
+  delay(potenciaAtual);
 }
 
-int calculateTime(int potencia){
- return potencia;
-  int time = 1023 - potencia;
-  return time * 10;
-    
-}
