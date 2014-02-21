@@ -1,17 +1,19 @@
 const int LDR = 0;
-int lumAtual = 0;
+const int led = 11;
+int luminosidade = 0;
+int pwm = 0;
 
-
-void setup(){
+void setup() {
+  pinMode(led, OUTPUT);
   Serial.begin(9600);
 }
 
-void loop(){
-  lumAtual = analogRead(LDR);
-  Serial.print("Luminosidade atual: ");
-  Serial.println(lumAtual);
+void loop() {
+  luminosidade = analogRead(LDR);
+  pwm = map(luminosidade, 0, 150, 255, 0);
   
-  
-  
-  delay(500);
+  if(pwm < 0) pwm = 0;
+  if(pwm > 255) pwm = 255;
+  analogWrite(led, pwm);
+
 }
